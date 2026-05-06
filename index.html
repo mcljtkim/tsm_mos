@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Recognition Study</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background: #f0f2f5;
+  color: #1a1a1a;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.screen {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 40px 48px;
+  max-width: 720px;
+  width: 100%;
+  margin: 24px;
+}
+h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; color: #111; }
+h2 { font-size: 1.25rem; font-weight: 600; margin-bottom: 12px; color: #222; }
+p  { line-height: 1.65; color: #444; margin-bottom: 10px; }
+.subtitle { color: #666; font-size: 0.95rem; margin-bottom: 24px; }
+
+/* Progress */
+.progress-bar-wrap {
+  background: #e8eaed;
+  border-radius: 8px;
+  height: 8px;
+  margin-bottom: 6px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: #4A90D9;
+  border-radius: 8px;
+  transition: width 0.3s ease;
+}
+.progress-text { font-size: 0.85rem; color: #888; text-align: right; margin-bottom: 20px; }
+
+/* Image display */
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f6f8fa;
+  border: 1px solid #e0e4e8;
+  border-radius: 10px;
+  margin-bottom: 22px;
+  min-height: 260px;
+  padding: 16px;
+}
+.img-container img {
+  max-width: 100%;
+  max-height: 300px;
+  image-rendering: auto;
+  border-radius: 4px;
+}
+
+/* Class buttons */
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.btn-class {
+  background: #fff;
+  border: 2px solid #cdd1d8;
+  border-radius: 8px;
+  padding: 10px 4px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, transform 0.08s;
+  color: #333;
+  text-align: center;
+}
+.btn-class:hover { background: #eef3fb; border-color: #4A90D9; }
+.btn-class:active { transform: scale(0.96); }
+.btn-class .key-hint {
+  display: block;
+  font-size: 0.70rem;
+  color: #999;
+  margin-bottom: 2px;
+}
+.btn-class.selected { background: #4A90D9; border-color: #2c6db0; color: #fff; }
+.btn-class.correct  { background: #27ae60; border-color: #1e8449; color: #fff; }
+.btn-class.wrong    { background: #e74c3c; border-color: #c0392b; color: #fff; }
+
+/* Primary button */
+.btn-primary {
+  background: #4A90D9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.08s;
+}
+.btn-primary:hover { background: #2c6db0; }
+.btn-primary:active { transform: scale(0.97); }
+.btn-primary:disabled { background: #aac4e0; cursor: not-allowed; }
+
+.btn-secondary {
+  background: #fff;
+  color: #4A90D9;
+  border: 2px solid #4A90D9;
+  border-radius: 8px;
+  padding: 11px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background 0.15s;
+}
+.btn-secondary:hover { background: #eef3fb; }
+
+/* Form */
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.95rem; }
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #cdd1d8;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.form-group input:focus { border-color: #4A90D9; }
+
+/* Divider */
+hr { border: none; border-top: 1px solid #e8eaed; margin: 20px 0; }
+
+/* Info box */
+.info-box {
+  background: #eef5ff;
+  border: 1px solid #b8d3f5;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  font-size: 0.92rem;
+  color: #2c4a7c;
+  line-height: 1.55;
+}
+.info-box strong { color: #1a3a6b; }
+
+/* Consent checklist */
+.consent-list { list-style: none; margin: 14px 0; }
+.consent-list li {
+  padding: 7px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.93rem;
+  color: #444;
+  border-bottom: 1px solid #f0f0f0;
+}
+.consent-list li:last-child { border-bottom: none; }
+.consent-list li::before { content: "✓"; color: #27ae60; font-weight: 700; flex-shrink: 0; }
+
+/* Done screen */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+.stat-card {
+  background: #f6f8fa;
+  border-radius: 10px;
+  padding: 16px 12px;
+  text-align: center;
+}
+.stat-card .val { font-size: 1.8rem; font-weight: 700; color: #4A90D9; }
+.stat-card .lbl { font-size: 0.8rem; color: #888; margin-top: 4px; }
+
+/* Alert */
+.alert {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin: 10px 0;
+}
+.alert-warn { background: #fff8e1; border: 1px solid #ffd54f; color: #7a5800; }
+.alert-info { background: #e8f5e9; border: 1px solid #a5d6a7; color: #1b5e20; }
+
+/* Question label */
+.question-label {
+  font-size: 1.0rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+/* Timer */
+.timer-bar-wrap {
+  background: #e8eaed;
+  border-radius: 6px;
+  height: 5px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.timer-bar-fill { height: 100%; background: #4A90D9; transition: width 0.1s linear; }
+
+/* Feedback overlay */
+.feedback-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+.feedback-badge.ok  { background: #d4efdf; color: #1e8449; }
+.feedback-badge.err { background: #fadbd8; color: #922b21; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     SCREEN 1 — Welcome / Consent
+════════════════════════════════════════════ -->
+<div id="screen-welcome" class="screen">
+  <h1>Image Recognition Study</h1>
+  <p class="subtitle">TSM Rebuttal — Human-Blocking Evaluation (ImageNet-1K)</p>
+  <hr>
+
+  <div class="info-box">
+    <strong>Purpose:</strong> We are evaluating how well people can recognize image content after
+    a privacy-protecting transformation is applied. This study takes approximately
+    <strong>5–8 minutes</strong>.
+  </div>
+
+  <p>In this study, you will see images one at a time and select the category you think best
+  describes each image. Some images may be processed/distorted — do your best to guess
+  even when the image is unclear.</p>
+
+  <ul class="consent-list">
+    <li>Your responses are <strong>anonymous</strong>. No personally identifying information is collected beyond the participant ID you enter.</li>
+    <li>You may stop at any time by closing the browser tab.</li>
+    <li>Results are stored locally in your browser and downloaded as a CSV file at the end.</li>
+    <li>The data will be used solely for academic research.</li>
+  </ul>
+
+  <hr>
+  <div class="form-group">
+    <label for="pid-input">Participant ID (any identifier, e.g. initials + number)</label>
+    <input type="text" id="pid-input" placeholder="e.g. AB01" maxlength="32" autocomplete="off">
+  </div>
+
+  <div id="resume-alert" class="alert alert-info" style="display:none">
+    ✔ Previous session found. Click <strong>Continue</strong> to resume where you left off.
+  </div>
+
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:8px">
+    <button class="btn-primary" id="btn-start">Agree &amp; Begin</button>
+    <span style="font-size:0.82rem; color:#aaa">By clicking, you consent to the study terms above.</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SCREEN 2 — Instructions
+════════════════════════════════════════════ -->
+<div id="screen-instructions" class="screen" style="display:none">
+  <h1>Instructions</h1>
+
+  <p>You will see <strong id="n-trials-label">?</strong> images in random order.
+  For each image, select the category that best matches what you see.</p>
+
+  <div class="info-box">
+    <strong>Categories (10):</strong><br>
+    <span id="class-list-label" style="font-size:0.93rem; line-height:2"></span>
+  </div>
+
+  <p><strong>Tips:</strong></p>
+  <ul style="margin:8px 0 16px 20px; line-height:1.8; font-size:0.93rem; color:#444">
+    <li>Use the on-screen buttons <em>or</em> keyboard shortcuts (<kbd>1</kbd>–<kbd>9</kbd> and <kbd>0</kbd>).</li>
+    <li>Some images may look distorted — <strong>always select your best guess</strong>.</li>
+    <li>Work at a natural pace. There is no time limit per image.</li>
+    <li>Your progress is auto-saved in this browser — you can close and resume with the same ID.</li>
+  </ul>
+
+  <p>We will start with <strong>3 practice images</strong> to familiarise you with the interface
+  (practice responses are not recorded).</p>
+
+  <button class="btn-primary" id="btn-begin-practice">Start Practice</button>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SCREEN 3 — Trial
+════════════════════════════════════════════ -->
+<div id="screen-trial" class="screen" style="display:none">
+
+  <div class="progress-bar-wrap">
+    <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
+  </div>
+  <div class="progress-text" id="progress-text">0 / 0</div>
+
+  <div id="practice-banner" class="alert alert-warn" style="display:none; margin-bottom:10px">
+    🔵 Practice trial — responses not recorded.
+  </div>
+
+  <div id="feedback-area" style="text-align:center; display:none">
+    <div class="feedback-badge" id="feedback-badge"></div>
+    <div id="feedback-msg" style="font-size:0.88rem; color:#555; margin-bottom:8px"></div>
+  </div>
+
+  <div class="img-container">
+    <img id="trial-img" src="" alt="stimulus">
+  </div>
+
+  <div class="question-label">Which category best describes this image?</div>
+
+  <div class="btn-grid" id="btn-grid"></div>
+
+  <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; color:#bbb; margin-top:4px">
+    <span id="trial-condition-label"></span>
+    <span>Use keyboard: <kbd>1</kbd>–<kbd>9</kbd>, <kbd>0</kbd> for 10th</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SCREEN 4 — Done
+════════════════════════════════════════════ -->
+<div id="screen-done" class="screen" style="display:none">
+  <h1>Thank you! 🎉</h1>
+  <p class="subtitle">You have completed all trials.</p>
+  <hr>
+
+  <div class="stat-grid" id="stat-grid"></div>
+
+  <div class="info-box" style="margin-top:8px">
+    <strong>Next step:</strong> Please download your results CSV and
+    send it to <strong id="contact-email">victoryjinta@gmail.com</strong>.
+  </div>
+
+  <div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap">
+    <button class="btn-primary" id="btn-download">⬇ Download Results CSV</button>
+    <button class="btn-secondary" id="btn-copy-csv">Copy CSV to Clipboard</button>
+  </div>
+
+  <p style="font-size:0.8rem; color:#bbb; margin-top:18px">
+    Results are also stored in your browser's localStorage under key
+    <code>tsm_study_<span id="pid-display2"></span></code>.
+  </p>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+//  CONFIG & GLOBALS
+// ═══════════════════════════════════════════════════════════════
+const CONTACT_EMAIL   = 'victoryjinta@gmail.com';
+const PRACTICE_COUNT  = 3;      // practice trials (from Original condition)
+const SHOW_FEEDBACK   = true;   // show correct/wrong during practice
+const SHOW_CONDITION  = false;  // hide condition label from participants
+
+let CONFIG    = null;   // loaded from study_config.json
+let PID       = '';
+let TRIALS    = [];     // main trial sequence
+let PRACTICE  = [];     // practice trial sequence
+let CUR_IDX   = 0;      // current trial index (into TRIALS)
+let RESPONSES = [];     // {trial_idx, img_path, condition, class_id, class_name, answer_id, answer_name, correct, rt_ms, ts}
+let IS_PRACTICE = false;
+let PRAC_IDX  = 0;
+let TRIAL_T0  = 0;
+
+// ═══════════════════════════════════════════════════════════════
+//  PRNG (mulberry32)
+// ═══════════════════════════════════════════════════════════════
+function mulberry32(seed) {
+  return function () {
+    seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+    let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+
+function hashStr(s) {
+  let h = 5381;
+  for (let i = 0; i < s.length; i++) { h = ((h << 5) + h) ^ s.charCodeAt(i); }
+  return h >>> 0;
+}
+
+function shuffle(arr, rng) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  localStorage helpers
+// ═══════════════════════════════════════════════════════════════
+function lsKey(pid) { return 'tsm_study_' + pid; }
+
+function saveProgress() {
+  localStorage.setItem(lsKey(PID), JSON.stringify({ idx: CUR_IDX, responses: RESPONSES }));
+}
+
+function loadProgress(pid) {
+  const raw = localStorage.getItem(lsKey(pid));
+  return raw ? JSON.parse(raw) : null;
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  Trial generation
+// ═══════════════════════════════════════════════════════════════
+function buildTrials(pid) {
+  const rng = mulberry32(hashStr(pid));
+  const perCond = CONFIG.trials_per_condition || 20;
+
+  // Group images by condition
+  const byCond = {};
+  for (const img of CONFIG.images) {
+    if (!byCond[img.condition]) byCond[img.condition] = [];
+    byCond[img.condition].push(img);
+  }
+
+  let pool = [];
+  for (const imgs of Object.values(byCond)) {
+    const shuffled = shuffle(imgs, rng);
+    pool.push(...shuffled.slice(0, perCond));
+  }
+
+  return shuffle(pool, rng);
+}
+
+function buildPractice(pid) {
+  const rng = mulberry32(hashStr(pid + '__practice'));
+  const originals = CONFIG.images.filter(x => x.condition === 'Original');
+  return shuffle(originals, rng).slice(0, PRACTICE_COUNT);
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  UI helpers
+// ═══════════════════════════════════════════════════════════════
+function show(id) {
+  ['screen-welcome','screen-instructions','screen-trial','screen-done']
+    .forEach(s => { document.getElementById(s).style.display = (s === id) ? '' : 'none'; });
+}
+
+function buildClassButtons() {
+  const grid = document.getElementById('btn-grid');
+  grid.innerHTML = '';
+  CONFIG.classes.forEach((cls, i) => {
+    const key = i < 9 ? String(i + 1) : '0';
+    const btn = document.createElement('button');
+    btn.className = 'btn-class';
+    btn.id = 'cls-btn-' + i;
+    btn.innerHTML = `<span class="key-hint">[${key}]</span>${cls}`;
+    btn.addEventListener('click', () => recordAnswer(i));
+    grid.appendChild(btn);
+  });
+}
+
+function resetButtons() {
+  CONFIG.classes.forEach((_, i) => {
+    const btn = document.getElementById('cls-btn-' + i);
+    if (btn) { btn.className = 'btn-class'; btn.disabled = false; }
+  });
+}
+
+function setButtonsEnabled(en) {
+  CONFIG.classes.forEach((_, i) => {
+    const btn = document.getElementById('cls-btn-' + i);
+    if (btn) btn.disabled = !en;
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  Trial logic
+// ═══════════════════════════════════════════════════════════════
+function showTrial(trial, trialNum, total, isPractice) {
+  IS_PRACTICE = isPractice;
+
+  // Progress
+  document.getElementById('progress-fill').style.width = (trialNum / total * 100) + '%';
+  document.getElementById('progress-text').textContent =
+    (isPractice ? 'Practice ' : '') + trialNum + ' / ' + total;
+
+  // Practice banner
+  document.getElementById('practice-banner').style.display = isPractice ? '' : 'none';
+
+  // Hide feedback
+  document.getElementById('feedback-area').style.display = 'none';
+
+  // Condition debug label (hidden by default)
+  document.getElementById('trial-condition-label').textContent =
+    SHOW_CONDITION ? trial.condition : '';
+
+  // Image
+  const img = document.getElementById('trial-img');
+  img.src = '';
+  img.src = trial.path;
+
+  resetButtons();
+  setButtonsEnabled(true);
+  TRIAL_T0 = performance.now();
+}
+
+function recordAnswer(ansId) {
+  const rt = Math.round(performance.now() - TRIAL_T0);
+  setButtonsEnabled(false);
+
+  const trial = IS_PRACTICE ? PRACTICE[PRAC_IDX] : TRIALS[CUR_IDX];
+  const correct = (ansId === trial.class_id) ? 1 : 0;
+  const ansName = CONFIG.classes[ansId];
+
+  // Highlight
+  document.getElementById('cls-btn-' + ansId).classList.add(
+    (correct ? 'correct' : 'wrong')
+  );
+  if (!correct && SHOW_FEEDBACK) {
+    const cb = document.getElementById('cls-btn-' + trial.class_id);
+    if (cb) cb.classList.add('correct');
+  }
+
+  if (IS_PRACTICE) {
+    // Show feedback during practice
+    const fb = document.getElementById('feedback-area');
+    const badge = document.getElementById('feedback-badge');
+    const msg = document.getElementById('feedback-msg');
+    fb.style.display = '';
+    if (correct) {
+      badge.className = 'feedback-badge ok';
+      badge.textContent = 'Correct ✓';
+      msg.textContent = `The image showed: ${trial.class_name}.`;
+    } else {
+      badge.className = 'feedback-badge err';
+      badge.textContent = 'Incorrect ✗';
+      msg.textContent = `The correct answer was: ${trial.class_name}. You selected: ${ansName}.`;
+    }
+    setTimeout(() => advancePractice(), 1200);
+  } else {
+    // Record response
+    RESPONSES.push({
+      trial_idx:   CUR_IDX + 1,
+      img_path:    trial.path,
+      condition:   trial.condition,
+      class_id:    trial.class_id,
+      class_name:  trial.class_name,
+      answer_id:   ansId,
+      answer_name: ansName,
+      correct:     correct,
+      rt_ms:       rt,
+      ts:          new Date().toISOString()
+    });
+    saveProgress();
+    setTimeout(() => advanceTrial(), 350);
+  }
+}
+
+function advancePractice() {
+  PRAC_IDX++;
+  if (PRAC_IDX >= PRACTICE.length) {
+    // Practice done → start main study
+    document.getElementById('feedback-area').style.display = 'none';
+    loadCurrentTrial();
+  } else {
+    showTrial(PRACTICE[PRAC_IDX], PRAC_IDX + 1, PRACTICE.length, true);
+  }
+}
+
+function loadCurrentTrial() {
+  if (CUR_IDX >= TRIALS.length) {
+    showDone();
+    return;
+  }
+  showTrial(TRIALS[CUR_IDX], CUR_IDX + 1, TRIALS.length, false);
+}
+
+function advanceTrial() {
+  CUR_IDX++;
+  loadCurrentTrial();
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  Done screen
+// ═══════════════════════════════════════════════════════════════
+function showDone() {
+  show('screen-done');
+  document.getElementById('pid-display2').textContent = PID;
+  document.getElementById('contact-email').textContent = CONTACT_EMAIL;
+
+  // Compute per-condition accuracy
+  const conds = {};
+  for (const r of RESPONSES) {
+    if (!conds[r.condition]) conds[r.condition] = { n: 0, ok: 0 };
+    conds[r.condition].n++;
+    conds[r.condition].ok += r.correct;
+  }
+
+  const grid = document.getElementById('stat-grid');
+  grid.innerHTML = '';
+  for (const [cond, s] of Object.entries(conds)) {
+    const acc = s.n > 0 ? (s.ok / s.n * 100).toFixed(1) : '-';
+    grid.innerHTML += `
+      <div class="stat-card">
+        <div class="val">${acc}%</div>
+        <div class="lbl">${cond}<br><span style="color:#aaa;font-size:0.75rem">(${s.n} trials)</span></div>
+      </div>`;
+  }
+
+  // Total
+  const totalN = RESPONSES.length;
+  const totalOk = RESPONSES.reduce((s, r) => s + r.correct, 0);
+  grid.innerHTML += `
+    <div class="stat-card" style="background:#eef5ff">
+      <div class="val" style="color:#2c6db0">${(totalOk/totalN*100).toFixed(1)}%</div>
+      <div class="lbl">Overall<br><span style="color:#aaa;font-size:0.75rem">(${totalN} trials)</span></div>
+    </div>`;
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  CSV export
+// ═══════════════════════════════════════════════════════════════
+function makeCSV() {
+  const header = ['trial_idx','participant_id','img_path','condition',
+                  'class_id','class_name','answer_id','answer_name',
+                  'correct','rt_ms','timestamp_iso'];
+  const rows = RESPONSES.map(r => [
+    r.trial_idx, PID, r.img_path, r.condition,
+    r.class_id, r.class_name, r.answer_id, r.answer_name,
+    r.correct, r.rt_ms, r.ts
+  ]);
+  return [header, ...rows].map(r => r.join(',')).join('\n');
+}
+
+function downloadCSV() {
+  const csv = makeCSV();
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `userstudy_${PID}_${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  Event bindings
+// ═══════════════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', async () => {
+  // Load config
+  try {
+    const resp = await fetch('study_config.json');
+    CONFIG = await resp.json();
+  } catch (e) {
+    alert('Error loading study_config.json — make sure it exists in the same folder.\n\n' + e);
+    return;
+  }
+
+  // Populate instructions class list
+  document.getElementById('class-list-label').innerHTML =
+    CONFIG.classes.map((c, i) => `<span style="display:inline-block;background:#eef3fb;border-radius:6px;padding:2px 10px;margin:2px;font-weight:500">${i < 9 ? i+1 : 0}. ${c}</span>`).join(' ');
+
+  // Welcome: check resume
+  document.getElementById('pid-input').addEventListener('input', function () {
+    const pid = this.value.trim();
+    const saved = loadProgress(pid);
+    document.getElementById('resume-alert').style.display =
+      (saved && saved.idx > 0) ? '' : 'none';
+  });
+
+  document.getElementById('btn-start').addEventListener('click', () => {
+    PID = document.getElementById('pid-input').value.trim();
+    if (!PID) { alert('Please enter a participant ID.'); return; }
+
+    // Build trial sequence
+    TRIALS   = buildTrials(PID);
+    PRACTICE = buildPractice(PID);
+
+    // Restore progress if exists
+    const saved = loadProgress(PID);
+    if (saved && saved.idx > 0 && saved.idx <= TRIALS.length) {
+      CUR_IDX   = saved.idx;
+      RESPONSES = saved.responses || [];
+    } else {
+      CUR_IDX   = 0;
+      RESPONSES = [];
+    }
+
+    document.getElementById('n-trials-label').textContent = TRIALS.length;
+    buildClassButtons();
+
+    if (CUR_IDX >= TRIALS.length) {
+      showDone();
+    } else if (CUR_IDX > 0) {
+      // Resuming — skip practice
+      show('screen-trial');
+      loadCurrentTrial();
+    } else {
+      show('screen-instructions');
+    }
+  });
+
+  document.getElementById('btn-begin-practice').addEventListener('click', () => {
+    PRAC_IDX = 0;
+    show('screen-trial');
+    showTrial(PRACTICE[0], 1, PRACTICE.length, true);
+  });
+
+  document.getElementById('btn-download').addEventListener('click', downloadCSV);
+
+  document.getElementById('btn-copy-csv').addEventListener('click', () => {
+    navigator.clipboard.writeText(makeCSV()).then(() => {
+      document.getElementById('btn-copy-csv').textContent = 'Copied!';
+      setTimeout(() => { document.getElementById('btn-copy-csv').textContent = 'Copy CSV to Clipboard'; }, 2000);
+    });
+  });
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', (e) => {
+    if (!CONFIG) return;
+    const screen = document.getElementById('screen-trial');
+    if (screen.style.display === 'none') return;
+    const num = parseInt(e.key);
+    if (!isNaN(num)) {
+      const idx = num === 0 ? 9 : num - 1;
+      if (idx >= 0 && idx < CONFIG.classes.length) recordAnswer(idx);
+    }
+  });
+});
+</script>
+</body>
+</html>

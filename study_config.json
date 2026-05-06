@@ -1,0 +1,1464 @@
+{
+  "classes": [
+    "cat",
+    "dog",
+    "bird",
+    "car",
+    "airplane",
+    "ship",
+    "horse",
+    "elephant",
+    "flower",
+    "bicycle"
+  ],
+  "conditions": [
+    "Original",
+    "TSM",
+    "Forbes"
+  ],
+  "trials_per_condition": 80,
+  "n_per_class": 8,
+  "contact_email": "victoryjinta@gmail.com",
+  "images": [
+    {
+      "path": "images/Original/cat/0.jpg",
+      "condition": "Original",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/TSM/cat/0.jpg",
+      "condition": "TSM",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/Forbes/cat/0.jpg",
+      "condition": "Forbes",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/Original/cat/1.jpg",
+      "condition": "Original",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/TSM/cat/1.jpg",
+      "condition": "TSM",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/Forbes/cat/1.jpg",
+      "condition": "Forbes",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/Original/cat/2.jpg",
+      "condition": "Original",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/TSM/cat/2.jpg",
+      "condition": "TSM",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/Forbes/cat/2.jpg",
+      "condition": "Forbes",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/Original/cat/3.jpg",
+      "condition": "Original",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/TSM/cat/3.jpg",
+      "condition": "TSM",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/Forbes/cat/3.jpg",
+      "condition": "Forbes",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/Original/cat/4.jpg",
+      "condition": "Original",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/TSM/cat/4.jpg",
+      "condition": "TSM",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/Forbes/cat/4.jpg",
+      "condition": "Forbes",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/Original/cat/5.jpg",
+      "condition": "Original",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/TSM/cat/5.jpg",
+      "condition": "TSM",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/Forbes/cat/5.jpg",
+      "condition": "Forbes",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/Original/cat/6.jpg",
+      "condition": "Original",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/TSM/cat/6.jpg",
+      "condition": "TSM",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/Forbes/cat/6.jpg",
+      "condition": "Forbes",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/Original/cat/7.jpg",
+      "condition": "Original",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/TSM/cat/7.jpg",
+      "condition": "TSM",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/Forbes/cat/7.jpg",
+      "condition": "Forbes",
+      "class_id": 0,
+      "class_name": "cat"
+    },
+    {
+      "path": "images/Original/dog/0.jpg",
+      "condition": "Original",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/TSM/dog/0.jpg",
+      "condition": "TSM",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/Forbes/dog/0.jpg",
+      "condition": "Forbes",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/Original/dog/1.jpg",
+      "condition": "Original",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/TSM/dog/1.jpg",
+      "condition": "TSM",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/Forbes/dog/1.jpg",
+      "condition": "Forbes",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/Original/dog/2.jpg",
+      "condition": "Original",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/TSM/dog/2.jpg",
+      "condition": "TSM",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/Forbes/dog/2.jpg",
+      "condition": "Forbes",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/Original/dog/3.jpg",
+      "condition": "Original",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/TSM/dog/3.jpg",
+      "condition": "TSM",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/Forbes/dog/3.jpg",
+      "condition": "Forbes",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/Original/dog/4.jpg",
+      "condition": "Original",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/TSM/dog/4.jpg",
+      "condition": "TSM",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/Forbes/dog/4.jpg",
+      "condition": "Forbes",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/Original/dog/5.jpg",
+      "condition": "Original",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/TSM/dog/5.jpg",
+      "condition": "TSM",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/Forbes/dog/5.jpg",
+      "condition": "Forbes",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/Original/dog/6.jpg",
+      "condition": "Original",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/TSM/dog/6.jpg",
+      "condition": "TSM",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/Forbes/dog/6.jpg",
+      "condition": "Forbes",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/Original/dog/7.jpg",
+      "condition": "Original",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/TSM/dog/7.jpg",
+      "condition": "TSM",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/Forbes/dog/7.jpg",
+      "condition": "Forbes",
+      "class_id": 1,
+      "class_name": "dog"
+    },
+    {
+      "path": "images/Original/bird/0.jpg",
+      "condition": "Original",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/TSM/bird/0.jpg",
+      "condition": "TSM",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/Forbes/bird/0.jpg",
+      "condition": "Forbes",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/Original/bird/1.jpg",
+      "condition": "Original",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/TSM/bird/1.jpg",
+      "condition": "TSM",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/Forbes/bird/1.jpg",
+      "condition": "Forbes",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/Original/bird/2.jpg",
+      "condition": "Original",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/TSM/bird/2.jpg",
+      "condition": "TSM",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/Forbes/bird/2.jpg",
+      "condition": "Forbes",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/Original/bird/3.jpg",
+      "condition": "Original",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/TSM/bird/3.jpg",
+      "condition": "TSM",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/Forbes/bird/3.jpg",
+      "condition": "Forbes",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/Original/bird/4.jpg",
+      "condition": "Original",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/TSM/bird/4.jpg",
+      "condition": "TSM",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/Forbes/bird/4.jpg",
+      "condition": "Forbes",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/Original/bird/5.jpg",
+      "condition": "Original",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/TSM/bird/5.jpg",
+      "condition": "TSM",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/Forbes/bird/5.jpg",
+      "condition": "Forbes",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/Original/bird/6.jpg",
+      "condition": "Original",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/TSM/bird/6.jpg",
+      "condition": "TSM",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/Forbes/bird/6.jpg",
+      "condition": "Forbes",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/Original/bird/7.jpg",
+      "condition": "Original",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/TSM/bird/7.jpg",
+      "condition": "TSM",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/Forbes/bird/7.jpg",
+      "condition": "Forbes",
+      "class_id": 2,
+      "class_name": "bird"
+    },
+    {
+      "path": "images/Original/car/0.jpg",
+      "condition": "Original",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/TSM/car/0.jpg",
+      "condition": "TSM",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/Forbes/car/0.jpg",
+      "condition": "Forbes",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/Original/car/1.jpg",
+      "condition": "Original",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/TSM/car/1.jpg",
+      "condition": "TSM",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/Forbes/car/1.jpg",
+      "condition": "Forbes",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/Original/car/2.jpg",
+      "condition": "Original",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/TSM/car/2.jpg",
+      "condition": "TSM",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/Forbes/car/2.jpg",
+      "condition": "Forbes",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/Original/car/3.jpg",
+      "condition": "Original",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/TSM/car/3.jpg",
+      "condition": "TSM",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/Forbes/car/3.jpg",
+      "condition": "Forbes",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/Original/car/4.jpg",
+      "condition": "Original",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/TSM/car/4.jpg",
+      "condition": "TSM",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/Forbes/car/4.jpg",
+      "condition": "Forbes",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/Original/car/5.jpg",
+      "condition": "Original",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/TSM/car/5.jpg",
+      "condition": "TSM",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/Forbes/car/5.jpg",
+      "condition": "Forbes",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/Original/car/6.jpg",
+      "condition": "Original",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/TSM/car/6.jpg",
+      "condition": "TSM",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/Forbes/car/6.jpg",
+      "condition": "Forbes",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/Original/car/7.jpg",
+      "condition": "Original",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/TSM/car/7.jpg",
+      "condition": "TSM",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/Forbes/car/7.jpg",
+      "condition": "Forbes",
+      "class_id": 3,
+      "class_name": "car"
+    },
+    {
+      "path": "images/Original/airplane/0.jpg",
+      "condition": "Original",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/TSM/airplane/0.jpg",
+      "condition": "TSM",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/Forbes/airplane/0.jpg",
+      "condition": "Forbes",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/Original/airplane/1.jpg",
+      "condition": "Original",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/TSM/airplane/1.jpg",
+      "condition": "TSM",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/Forbes/airplane/1.jpg",
+      "condition": "Forbes",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/Original/airplane/2.jpg",
+      "condition": "Original",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/TSM/airplane/2.jpg",
+      "condition": "TSM",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/Forbes/airplane/2.jpg",
+      "condition": "Forbes",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/Original/airplane/3.jpg",
+      "condition": "Original",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/TSM/airplane/3.jpg",
+      "condition": "TSM",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/Forbes/airplane/3.jpg",
+      "condition": "Forbes",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/Original/airplane/4.jpg",
+      "condition": "Original",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/TSM/airplane/4.jpg",
+      "condition": "TSM",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/Forbes/airplane/4.jpg",
+      "condition": "Forbes",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/Original/airplane/5.jpg",
+      "condition": "Original",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/TSM/airplane/5.jpg",
+      "condition": "TSM",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/Forbes/airplane/5.jpg",
+      "condition": "Forbes",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/Original/airplane/6.jpg",
+      "condition": "Original",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/TSM/airplane/6.jpg",
+      "condition": "TSM",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/Forbes/airplane/6.jpg",
+      "condition": "Forbes",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/Original/airplane/7.jpg",
+      "condition": "Original",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/TSM/airplane/7.jpg",
+      "condition": "TSM",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/Forbes/airplane/7.jpg",
+      "condition": "Forbes",
+      "class_id": 4,
+      "class_name": "airplane"
+    },
+    {
+      "path": "images/Original/ship/0.jpg",
+      "condition": "Original",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/TSM/ship/0.jpg",
+      "condition": "TSM",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/Forbes/ship/0.jpg",
+      "condition": "Forbes",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/Original/ship/1.jpg",
+      "condition": "Original",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/TSM/ship/1.jpg",
+      "condition": "TSM",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/Forbes/ship/1.jpg",
+      "condition": "Forbes",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/Original/ship/2.jpg",
+      "condition": "Original",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/TSM/ship/2.jpg",
+      "condition": "TSM",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/Forbes/ship/2.jpg",
+      "condition": "Forbes",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/Original/ship/3.jpg",
+      "condition": "Original",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/TSM/ship/3.jpg",
+      "condition": "TSM",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/Forbes/ship/3.jpg",
+      "condition": "Forbes",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/Original/ship/4.jpg",
+      "condition": "Original",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/TSM/ship/4.jpg",
+      "condition": "TSM",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/Forbes/ship/4.jpg",
+      "condition": "Forbes",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/Original/ship/5.jpg",
+      "condition": "Original",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/TSM/ship/5.jpg",
+      "condition": "TSM",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/Forbes/ship/5.jpg",
+      "condition": "Forbes",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/Original/ship/6.jpg",
+      "condition": "Original",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/TSM/ship/6.jpg",
+      "condition": "TSM",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/Forbes/ship/6.jpg",
+      "condition": "Forbes",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/Original/ship/7.jpg",
+      "condition": "Original",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/TSM/ship/7.jpg",
+      "condition": "TSM",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/Forbes/ship/7.jpg",
+      "condition": "Forbes",
+      "class_id": 5,
+      "class_name": "ship"
+    },
+    {
+      "path": "images/Original/horse/0.jpg",
+      "condition": "Original",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/TSM/horse/0.jpg",
+      "condition": "TSM",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/Forbes/horse/0.jpg",
+      "condition": "Forbes",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/Original/horse/1.jpg",
+      "condition": "Original",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/TSM/horse/1.jpg",
+      "condition": "TSM",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/Forbes/horse/1.jpg",
+      "condition": "Forbes",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/Original/horse/2.jpg",
+      "condition": "Original",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/TSM/horse/2.jpg",
+      "condition": "TSM",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/Forbes/horse/2.jpg",
+      "condition": "Forbes",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/Original/horse/3.jpg",
+      "condition": "Original",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/TSM/horse/3.jpg",
+      "condition": "TSM",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/Forbes/horse/3.jpg",
+      "condition": "Forbes",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/Original/horse/4.jpg",
+      "condition": "Original",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/TSM/horse/4.jpg",
+      "condition": "TSM",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/Forbes/horse/4.jpg",
+      "condition": "Forbes",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/Original/horse/5.jpg",
+      "condition": "Original",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/TSM/horse/5.jpg",
+      "condition": "TSM",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/Forbes/horse/5.jpg",
+      "condition": "Forbes",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/Original/horse/6.jpg",
+      "condition": "Original",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/TSM/horse/6.jpg",
+      "condition": "TSM",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/Forbes/horse/6.jpg",
+      "condition": "Forbes",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/Original/horse/7.jpg",
+      "condition": "Original",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/TSM/horse/7.jpg",
+      "condition": "TSM",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/Forbes/horse/7.jpg",
+      "condition": "Forbes",
+      "class_id": 6,
+      "class_name": "horse"
+    },
+    {
+      "path": "images/Original/elephant/0.jpg",
+      "condition": "Original",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/TSM/elephant/0.jpg",
+      "condition": "TSM",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/Forbes/elephant/0.jpg",
+      "condition": "Forbes",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/Original/elephant/1.jpg",
+      "condition": "Original",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/TSM/elephant/1.jpg",
+      "condition": "TSM",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/Forbes/elephant/1.jpg",
+      "condition": "Forbes",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/Original/elephant/2.jpg",
+      "condition": "Original",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/TSM/elephant/2.jpg",
+      "condition": "TSM",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/Forbes/elephant/2.jpg",
+      "condition": "Forbes",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/Original/elephant/3.jpg",
+      "condition": "Original",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/TSM/elephant/3.jpg",
+      "condition": "TSM",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/Forbes/elephant/3.jpg",
+      "condition": "Forbes",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/Original/elephant/4.jpg",
+      "condition": "Original",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/TSM/elephant/4.jpg",
+      "condition": "TSM",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/Forbes/elephant/4.jpg",
+      "condition": "Forbes",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/Original/elephant/5.jpg",
+      "condition": "Original",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/TSM/elephant/5.jpg",
+      "condition": "TSM",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/Forbes/elephant/5.jpg",
+      "condition": "Forbes",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/Original/elephant/6.jpg",
+      "condition": "Original",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/TSM/elephant/6.jpg",
+      "condition": "TSM",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/Forbes/elephant/6.jpg",
+      "condition": "Forbes",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/Original/elephant/7.jpg",
+      "condition": "Original",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/TSM/elephant/7.jpg",
+      "condition": "TSM",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/Forbes/elephant/7.jpg",
+      "condition": "Forbes",
+      "class_id": 7,
+      "class_name": "elephant"
+    },
+    {
+      "path": "images/Original/flower/0.jpg",
+      "condition": "Original",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/TSM/flower/0.jpg",
+      "condition": "TSM",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/Forbes/flower/0.jpg",
+      "condition": "Forbes",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/Original/flower/1.jpg",
+      "condition": "Original",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/TSM/flower/1.jpg",
+      "condition": "TSM",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/Forbes/flower/1.jpg",
+      "condition": "Forbes",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/Original/flower/2.jpg",
+      "condition": "Original",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/TSM/flower/2.jpg",
+      "condition": "TSM",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/Forbes/flower/2.jpg",
+      "condition": "Forbes",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/Original/flower/3.jpg",
+      "condition": "Original",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/TSM/flower/3.jpg",
+      "condition": "TSM",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/Forbes/flower/3.jpg",
+      "condition": "Forbes",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/Original/flower/4.jpg",
+      "condition": "Original",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/TSM/flower/4.jpg",
+      "condition": "TSM",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/Forbes/flower/4.jpg",
+      "condition": "Forbes",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/Original/flower/5.jpg",
+      "condition": "Original",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/TSM/flower/5.jpg",
+      "condition": "TSM",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/Forbes/flower/5.jpg",
+      "condition": "Forbes",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/Original/flower/6.jpg",
+      "condition": "Original",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/TSM/flower/6.jpg",
+      "condition": "TSM",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/Forbes/flower/6.jpg",
+      "condition": "Forbes",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/Original/flower/7.jpg",
+      "condition": "Original",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/TSM/flower/7.jpg",
+      "condition": "TSM",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/Forbes/flower/7.jpg",
+      "condition": "Forbes",
+      "class_id": 8,
+      "class_name": "flower"
+    },
+    {
+      "path": "images/Original/bicycle/0.jpg",
+      "condition": "Original",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/TSM/bicycle/0.jpg",
+      "condition": "TSM",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/Forbes/bicycle/0.jpg",
+      "condition": "Forbes",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/Original/bicycle/1.jpg",
+      "condition": "Original",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/TSM/bicycle/1.jpg",
+      "condition": "TSM",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/Forbes/bicycle/1.jpg",
+      "condition": "Forbes",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/Original/bicycle/2.jpg",
+      "condition": "Original",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/TSM/bicycle/2.jpg",
+      "condition": "TSM",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/Forbes/bicycle/2.jpg",
+      "condition": "Forbes",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/Original/bicycle/3.jpg",
+      "condition": "Original",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/TSM/bicycle/3.jpg",
+      "condition": "TSM",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/Forbes/bicycle/3.jpg",
+      "condition": "Forbes",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/Original/bicycle/4.jpg",
+      "condition": "Original",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/TSM/bicycle/4.jpg",
+      "condition": "TSM",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/Forbes/bicycle/4.jpg",
+      "condition": "Forbes",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/Original/bicycle/5.jpg",
+      "condition": "Original",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/TSM/bicycle/5.jpg",
+      "condition": "TSM",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/Forbes/bicycle/5.jpg",
+      "condition": "Forbes",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/Original/bicycle/6.jpg",
+      "condition": "Original",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/TSM/bicycle/6.jpg",
+      "condition": "TSM",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/Forbes/bicycle/6.jpg",
+      "condition": "Forbes",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/Original/bicycle/7.jpg",
+      "condition": "Original",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/TSM/bicycle/7.jpg",
+      "condition": "TSM",
+      "class_id": 9,
+      "class_name": "bicycle"
+    },
+    {
+      "path": "images/Forbes/bicycle/7.jpg",
+      "condition": "Forbes",
+      "class_id": 9,
+      "class_name": "bicycle"
+    }
+  ]
+}
