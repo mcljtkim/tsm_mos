@@ -341,9 +341,12 @@ hr { border: none; border-top: 1px solid #e8eaed; margin: 20px 0; }
 
   <div class="stat-grid" id="stat-grid"></div>
 
+  <div id="submit-status" class="alert" style="margin-top:8px; display:none"></div>
+
   <div class="info-box" style="margin-top:8px">
-    <strong>Next step:</strong> Please download your results CSV and
-    send it to <strong id="contact-email">victoryjinta@gmail.com</strong>.
+    <strong>Your results have been submitted automatically.</strong>
+    If submission failed, please use the download button below and
+    send the CSV to <strong id="contact-email">jtkim@mcl.korea.ac.kr</strong>.
   </div>
 
   <div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap">
@@ -361,7 +364,8 @@ hr { border: none; border-top: 1px solid #e8eaed; margin: 20px 0; }
 // ═══════════════════════════════════════════════════════════════
 //  CONFIG & GLOBALS
 // ═══════════════════════════════════════════════════════════════
-const CONTACT_EMAIL   = 'victoryjinta@gmail.com';
+const CONTACT_EMAIL   = 'jtkim@mcl.korea.ac.kr';
+const FORMSPREE_URL   = 'https://formspree.io/f/mnjwvbrp';
 const PRACTICE_COUNT  = 3;      // practice trials (from Original condition)
 const SHOW_FEEDBACK   = true;   // show correct/wrong during practice
 const SHOW_CONDITION  = false;  // hide condition label from participants
@@ -624,6 +628,40 @@ function showDone() {
       <div class="val" style="color:#2c6db0">${(totalOk/totalN*100).toFixed(1)}%</div>
       <div class="lbl">Overall<br><span style="color:#aaa;font-size:0.75rem">(${totalN} trials)</span></div>
     </div>`;
+
+  // Auto-submit to Formspree
+  submitToFormspree(makeCSV());
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  Formspree auto-submit
+// ═══════════════════════════════════════════════════════════════
+async function submitToFormspree(csv) {
+  const statusEl = document.getElementById('submit-status');
+  statusEl.style.display = '';
+  statusEl.className = 'alert alert-warn';
+  statusEl.textContent = 'Submitting results...';
+
+  try {
+    const resp = await fetch(FORMSPREE_URL, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        participant_id: PID,
+        timestamp: new Date().toISOString(),
+        results_csv: csv,
+      }),
+    });
+    if (resp.ok) {
+      statusEl.className = 'alert alert-info';
+      statusEl.textContent = '✔ Results submitted successfully. Thank you!';
+    } else {
+      throw new Error('HTTP ' + resp.status);
+    }
+  } catch (e) {
+    statusEl.className = 'alert alert-warn';
+    statusEl.textContent = '⚠ Auto-submit failed (' + e.message + '). Please download the CSV below and email it to ' + CONTACT_EMAIL + '.';
+  }
 }
 
 // ═══════════════════════════════════════════════════════════════
